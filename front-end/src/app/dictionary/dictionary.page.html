@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="secondary">
+            <ion-button (click)="logout()">
+                Logout
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Dictionary</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="wrapper">
+        <app-add-word></app-add-word>
+        <div class="dictionary">
+            <h5>Your words</h5>
+            <ng-container *ngFor="let item of (words$ | async); let i = index">
+                <app-word-translation [item]="item" [index]="i"></app-word-translation>
+            </ng-container>
+        </div>
+    </div>
+</ion-content>

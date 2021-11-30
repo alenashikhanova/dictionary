@@ -1,0 +1,13 @@
+<div class="flex">
+    <div class="text">
+        {{index + 1}}. {{item.word | titlecase}} - {{item.translation}}
+    </div>
+    <div class="date">
+        {{ item.createdAt | date:'dd.MM.YY'}}
+    </div>
+    <div class="btns">
+        <ion-button (click)="deleteWord(item)">
+            <ion-icon slot="start" name="trash-outline"></ion-icon>
+        </ion-button>
+    </div>
+</div>

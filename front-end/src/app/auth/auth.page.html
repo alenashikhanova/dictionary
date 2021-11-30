@@ -1,0 +1,18 @@
+<ion-content class="ion-text-center gradient">
+    <app-logo-header></app-logo-header>
+    <div class="vertical-center">
+
+        <div class="wrapper btns">
+
+            <a [routerLink]="['/login']" class="like-btn  primary">Sign In</a>
+
+            <a [routerLink]="['/register']" class="like-btn">Sign Up</a>
+
+            <a (click)="googleSignup()" class="like-btn bordered bottom">
+                <ion-icon class="icon-left" name="logo-google"></ion-icon> Login with Google
+            </a>
+
+        </div>
+    </div>
+
+</ion-content>

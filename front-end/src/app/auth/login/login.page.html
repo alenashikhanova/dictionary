@@ -1,0 +1,44 @@
+<ion-content class="ion-text-center gradient">
+
+    <app-logo-header></app-logo-header>
+
+    <div class="vertical-center">
+        <div class="wrapper">
+
+            <app-backend-error *ngIf="backendErrors$ | async" [backendErrorsProps]="backendErrors$ | async"></app-backend-error>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                <ion-grid class="mini-controls">
+                    <ion-row>
+                        <ion-item class="ion-item-transparent">
+                            <ion-icon name="mail-outline" slot="start"></ion-icon>
+                            <ion-label position="floating">Email</ion-label>
+                            <ion-input type="email" formControlName="email" name="email"></ion-input>
+                        </ion-item>
+
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                            <p *ngIf="email.errors?.required">
+                                Email is required
+                            </p>
+                            <p *ngIf="email.errors?.email">
+                                Email is not valid
+                            </p>
+                        </div>
+                    </ion-row>
+
+                    <ion-row>
+                        <input type="hidden" formControlName="password">
+                        <app-input-password (inputChanged)="updateInputForm($event)"></app-input-password>
+                    </ion-row>
+
+                    <a class="to-another-page left" [routerLink]="['/forgot-password']">Forgot password?</a>
+
+                    <ion-button expand="block" type="submit" [disabled]="!loginForm.valid || (isSubmitting$ | async)">Sign In</ion-button>
+
+                </ion-grid>
+            </form>
+        </div>
+    </div>
+
+    <ion-progress-bar *ngIf="isSubmitting$ | async" type="indeterminate" class="bottom-progress"></ion-progress-bar>
+</ion-content>

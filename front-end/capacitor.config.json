@@ -1,0 +1,14 @@
+{
+    "appId": "com.tempus.app",
+    "appName": "tempus",
+    "server": {
+        "cleartext": true
+    },
+    "plugins": {
+        "GoogleAuth": {
+            "scopes": ["profile", "email"],
+            "serverClientId": "Client_ID_for_Web_application",
+            "forceCodeForRefreshToken": true
+        }
+    }
+}

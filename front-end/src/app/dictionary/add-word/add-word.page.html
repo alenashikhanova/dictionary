@@ -1,0 +1,19 @@
+<form [formGroup]="addWordForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="mini-controls flex">
+        <ion-row>
+            <ion-item class="ion-item-transparent">
+                <ion-label position="floating">Word</ion-label>
+                <ion-input type="text" formControlName="word" name="word"></ion-input>
+                <ion-spinner class="spinner-absolute" *ngIf="isSubmitting$ | async"></ion-spinner>
+            </ion-item>
+
+            <div *ngIf="word.invalid && (word.dirty || word.touched)" class="alert">
+                <p *ngIf="word.errors?.required">Word is required</p>
+                <p *ngIf="word.errors?.maxlength">Word must be less than 50</p>
+                <p *ngIf="word.errors?.pattern">The word should not contain numbers or spaces</p>
+            </div>
+        </ion-row>
+
+        <ion-button expand="block" type="submit" [disabled]="!addWordForm.valid || (isSubmitting$ | async)">Add word</ion-button>
+    </div>
+</form>

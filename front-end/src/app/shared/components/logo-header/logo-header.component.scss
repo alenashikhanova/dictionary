@@ -1,0 +1,38 @@
+.curved {
+    display: block;
+    position: inherit;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    svg {
+        display: block;
+        opacity: 1;
+    }
+    .logo-block {
+        position: absolute;
+        top: 90px;
+        z-index: 1;
+        width: 100%;
+    }
+    .shadow {
+        filter: drop-shadow(3px 6px 4px rgba(0, 0, 0, 0.6));
+        -webkit-filter: drop-shadow(3px 6px 4px rgba(0, 0, 0, 0.6));
+    }
+    h1 {
+        text-shadow: 1px 4px 14px rgb(0 0 0 / 30%);
+        margin-top: 1px;
+        font-family: system-ui;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        transform: rotate( 29deg);
+        top: -12px;
+        position: relative;
+    }
+    .logo-img {
+        max-width: 100px;
+        max-height: 100px;
+        margin: 0 auto;
+        opacity: 0.7;
+    }
+}

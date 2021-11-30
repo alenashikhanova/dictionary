@@ -1,0 +1,290 @@
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*,
+ion-label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ion-toolbar.toolbar-title-default {
+    --background: #192232;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+}
+
+app-add-word .mini-controls.flex {
+    margin: 15px 0;
+    display: flex;
+    align-items: start;
+    padding: 20px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+    position: relative;
+    ion-button {
+        width: fit-content;
+        margin-top: 29px;
+        --border-radius: 4px;
+        margin-left: 20px;
+    }
+    .alert p {
+        font-size: 12px;
+        position: absolute;
+        bottom: -6px;
+        left: 16px;
+    }
+}
+
+.translation {
+    margin: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.dictionary {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 50%);
+    padding: 1px 16px 16px;
+    border-radius: 10px;
+    h5 {
+        margin: 15px 0 30px;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        .date {
+            font-size: 12px;
+            position: absolute;
+            bottom: -8px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .btns {
+            display: flex;
+            align-items: center;
+            ion-button {
+                --background: transparent;
+                --box-shadow: none;
+                --padding-end: 5px;
+            }
+        }
+    }
+}
+
+app-word-translation {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    display: flex;
+    padding-bottom: 17px;
+    margin-top: 5px;
+}
+
+app-word-translation:last-child {
+    border-bottom: none;
+}
+
+.wrapper {
+    margin: 0px 15px;
+}
+
+@media (min-width: 960px) {
+    .ion-page {
+        max-width: 385px;
+        max-height: 720px;
+        margin: 0 auto;
+        border-radius: 25px;
+        box-shadow: 0 0 34px rgb(0 0 0 / 50%);
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+    }
+}
+
+.error-message {
+    --background: #6847cf;
+    --border-radius: 50px;
+    --border-width: 4px;
+    --color: #ffffff;
+    --button-color: #ffffff;
+}
+
+.just-message {
+    --background: #161f3d;
+    --border-radius: 50px;
+    --color: #fff;
+}
+
+ion-content.gradient {
+    --background: var(--bacground-gradient);
+    .vertical-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 87%;
+        width: 87%;
+        margin: 0 auto;
+        .wrapper {
+            width: 100%;
+            margin: 0px 0px;
+        }
+        .btns {
+            margin-top: 100px;
+            .like-btn.bordered,
+            .like-btn.primary {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .to-another-page {
+        color: #fff;
+        text-decoration: none;
+        margin-top: 5px;
+        display: block;
+        font-size: 12px;
+    }
+    .alert p {
+        font-size: 10px;
+        line-height: 14px;
+        margin: 5px 0 0;
+        padding-left: 2px;
+        color: #efff00;
+        text-align: left;
+    }
+    .or-p {
+        margin: 5px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .bottom-progress {
+        position: fixed;
+        bottom: 0px;
+    }
+}
+
+.mini-controls {
+    ion-item ion-icon {
+        position: relative;
+        top: 14px;
+        margin-inline-end: 18px;
+        font-size: 22px;
+    }
+    ion-label {
+        position: relative;
+        top: 15px;
+        font-size: 13px;
+    }
+    .item-has-focus ion-label {
+        top: 0px;
+        font-size: inherit;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .item-has-value ion-label {
+        top: 0px;
+        font-size: inherit;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .item-label-floating ion-input {
+        min-height: 45px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    ion-item {
+        --background: transparent;
+        --border-color: rgba(255, 255, 255, 0.2);
+        margin: 0 auto 0px;
+        width: 100%;
+    }
+    ion-button {
+        margin-top: 30px;
+        --border-radius: 50px;
+        width: 100%;
+    }
+    .eye-password {
+        position: absolute;
+        right: 0px;
+        bottom: 10px;
+        color: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        z-index: 3;
+        ion-icon {
+            margin-inline-end: 5px;
+            top: 0px;
+        }
+    }
+}
+
+.like-btn {
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 10px;
+    border-radius: 50px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    .icon-left {
+        padding-right: 11px;
+        font-size: 18px;
+    }
+}
+
+app-input-password {
+    width: 100%;
+}
+
+.like-btn.primary {
+    background: var(--ion-color-primary);
+    color: #fff;
+}
+
+.like-btn.bordered {
+    background: transparent;
+    border: 2px inset var(--ion-color-primary);
+    color: #fff;
+}
+
+.to-another-page.left {
+    width: max-content;
+    text-align: left;
+    padding: 10px 0;
+}
+
+ion-spinner.spinner-absolute {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.bottom {
+    margin-top: 25px;
+}
+
+@media (min-height: 620px) {
+    .bottom {
+        position: absolute;
+        width: 87%;
+        left: 6.5%;
+        bottom: 10px;
+        box-sizing: inherit;
+    }
+}
